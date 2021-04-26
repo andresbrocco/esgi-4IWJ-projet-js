@@ -1,0 +1,20 @@
+{
+  "name": "esgi-4iwj-projet",
+  "version": "1.0.0",
+  "description": "Lancer projet Node: npm init",
+  "main": "index.js",
+  "scripts": {
+		"start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andresbrocco/esgi-4IWJ-projet-js.git"
+  },
+  "author": "Andre et Maxime",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andresbrocco/esgi-4IWJ-projet-js/issues"
+  },
+  "homepage": "https://github.com/andresbrocco/esgi-4IWJ-projet-js#readme"
+}
