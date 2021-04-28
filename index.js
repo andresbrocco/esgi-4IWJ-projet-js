@@ -1,8 +1,17 @@
-import Voiture from './voiture.js';
-import Moto from './moto.js';
+import Circuit from "./circuit";
 
-let voiture = new Voiture();
-let moto = new Moto();
+let circuit = new Circuit();
 
-voiture.display();
-moto.display();
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function main() {
+    console.log('Starting race!');
+    for (let i = 0; i < 10; i++) {
+        circuit.update();
+        await sleep(1000);
+    }
+}
+
+main();

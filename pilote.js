@@ -1,30 +1,31 @@
 // Objet Pilote
 export default function Pilote(name){
     this.name = name; //publique
-    let state = ""; //privé
+    let lastData = null;
+    let needUpdateFlag = false;
 
     // Recevoir données du Véhicule
     this.receiveData = function(data){
-        //Vehicule.getData();
-            //State
-            //Origin
-            //Position
+        if (lastData !== data) {
+            lastData = data;
+            needUpdateFlag = true;
+        }
     }
 
     // Verifie selon infos, si on doit appeler speak()
     this.needUpdate = function(){
-        if(!state==this.receiveData(data).state) // Si le state est différent du précédent
-            speak(this.receiveData(data).state);
+        if(needUpdateFlag) // Si le state est différent du précédent
+            this.speak();
     }
 
     // Connaitre état(state) du Pilote
     this.getState = function(){
-        return state;
+        return lastData.state;
     }
 
     // Génére phrase selon données reçues
     this.speak = function(){
-        switch (state){
+        switch (lastData.state){
             case "ready" :
                 console.log(`Here we go! I'm ${this.name}`);
                 break;
@@ -32,14 +33,14 @@ export default function Pilote(name){
                 console.log("Let's have some fun!");
                 break;
             case "sad" :
-                console.log(`Outch!!! Damn ${origin}`);
+                console.log(`Outch!!! Damn ${lastData.origin}`);
                 break;
             case "normal" :
                 console.log("");
                 break;
             case "finish" :
-                if(position==1) console.log("I'm the best");
-                else if(position==2) console.log("Could be the best");
+                if(lastData.position==1) console.log("I'm the best");
+                else if(lastData.position==2) console.log("Could be the best");
                 else console.log("Will be better next time");
                 break;
         }

@@ -1,7 +1,8 @@
-export default function Vehicule(pilote, number, maxVelocity, onFire) {
+export default function Vehicule(pilote, number, maxVelocity) {
     this.name = pilote.name;
     this.number = number;
     this.maxVelocity = maxVelocity;
+    let onFire;
     let arme = null;
     let distance = 0;
     let needUpdateFlag = false;
@@ -17,6 +18,7 @@ export default function Vehicule(pilote, number, maxVelocity, onFire) {
                    fireWeapon();
                 }
                 needUpdateFlag = true;
+                // return info;
                 break;
             case "weapon":
                 setWeapon(data.value)
