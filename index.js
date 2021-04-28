@@ -1,2 +1,8 @@
+import Voiture from './voiture.js';
+import Moto from './moto.js';
 
-console.log("Test reussit! ")
+let voiture = new Voiture();
+let moto = new Moto();
+
+voiture.display();
+moto.display();
