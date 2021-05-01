@@ -1,6 +1,7 @@
-import Circuit from "./circuit";
-
-let circuit = new Circuit();
+import Circuit from "./Circuit";
+import Driver from "./Driver";
+import Moto from "./Moto";
+import Car from "./Car";
 
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -13,5 +14,11 @@ async function main() {
         await sleep(1000);
     }
 }
+
+
+let circuit = new Circuit(100, 5);
+circuit.createVehicles();
+circuit.initRun();
+circuit.start();
 
 main();

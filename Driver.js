@@ -1,5 +1,4 @@
-// Objet Pilote
-export default function Pilote(name){
+export default function Driver(name){
     this.name = name; //publique
     let lastData = null;
     let needUpdateFlag = false;
@@ -48,9 +47,4 @@ export default function Pilote(name){
 
     // Si le pilote reçoit 2 fois une même instruction
     // il ne doit rien faire.
-
-
-
-
-
 }
